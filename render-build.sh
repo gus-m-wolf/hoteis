@@ -1,5 +1,7 @@
-#!/bin/bash
-mkdir -p .render/chrome
-curl -SL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o chrome.deb
-dpkg -x chrome.deb .render/chrome/
-rm chrome.deb
+#!/usr/bin/env bash
+
+# Atualizar pacotes e instalar Chromium
+apt-get update && apt-get install -y chromium
+
+# Garantir que o Python use os requisitos
+pip install -r requirements.txt
