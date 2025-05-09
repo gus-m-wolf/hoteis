@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-# Atualizar pacotes e instalar Chromium
+# Instalar Chromium
 apt-get update && apt-get install -y chromium
 
-# Garantir que o Python use os requisitos
+# Descobrir o caminho real do executável
+which chromium || which chromium-browser || echo "Chromium não encontrado"
+
+# Garantir instalação dos requisitos Python
 pip install -r requirements.txt
